@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title><%= college %> <%= department %> Professor Dashboard</title>
+  <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+  <div class="container">
+    <h1><%= college %>(<%= department %>) Professor Dashboard</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Specialization</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for(const user of results) { %>
+          <tr>
+            <td><%= user.NAME %></td>
+            <td><%= user.SPECIALIZATION %></td>
+          </tr>
+        <% } %>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/main.css">
+<script>
+var collegeDepartments = {
+    "IIT Delhi": ["Biochemical","Chemical","Chemistry","Civil","CSE","Electrical","Mathematics","Textile","Machanics"],
+    "IIT Bombay": ["Aerospace","Civil","Chemical","CSE","Electrical","Environemnt","Mathematics","Mechanical","Metallurgy"]  
+}
+window.onload = function() {
+  var collegeSel = document.getElementById("college");
+  var departmentSel = document.getElementById("department");
+  for (var x in collegeDepartments) {
+    collegeSel.options[collegeSel.options.length] = new Option(x, x);
+  }
+  collegeSel.onchange = function() {
+    //empty Chapters- and Topics- dropdowns
+    departmentSel.length = 1;
+    var z = collegeDepartments[collegeSel.value];
+    for (var i = 0; i < z.length; i++) {
+      departmentSel.options[departmentSel.options.length] = new Option(z[i], z[i]);
+    }
+  }
+}
+</script>
+</head>   
+<body>
+
+<h1>College Professor Details</h1>
+
+<form action="http://localhost:8080/results" method="POST">
+College: <select name="college" id="college">
+    <option value="" selected="selected">Select college</option>
+  </select>
+  <br><br>
+Department: <select name="department" id="department">
+    <option value="" selected="selected">Please select college first</option>
+  </select>
+  <br><br>
+  <input type="submit" value="Submit">  
+</form>
+
+</body>
+</html>

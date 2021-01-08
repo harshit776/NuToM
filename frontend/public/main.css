@@ -1,0 +1,41 @@
+body {
+  background-image: url("image.jpg");
+  box-sizing: border-box;
+  margin: 0;
+  font-family: 'Lucida Sans', Verdana, sans-serif;
+}
+
+form {
+  text-align: center;
+}
+
+.container {
+  width: 700px;
+  padding: 25px 0 0 0;
+  text-align: center;
+  margin: 0 auto;
+}
+
+tr {
+  text-align: left;
+}
+
+h1 {
+  text-align: center;
+}
+tbody > tr:not(:nth-child(2n)) {
+  background-color: #eee;
+}
+
+th {
+  font-size: 125%;
+  padding-bottom: 10px;
+}
+
+td {
+  padding: 5px;
+}
+
+td:not(:first-child) {
+  text-align: right;
+}
